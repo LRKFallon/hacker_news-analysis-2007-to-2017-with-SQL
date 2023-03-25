@@ -23,4 +23,24 @@ ORDER BY 2 DESC;
 SELECT (517 + 309 + 304 + 282) / 6366.0;
 /* Therefore, 22% of contributions are from  4 users between 2007 and 2017 */
 
+/* Identifying and removing troll behaviour by matching spam links */
+-- Hacker News Moderating
+SELECT user,
+   COUNT(*)
+FROM hacker_news
+WHERE url LIKE '%watch?v=dQw4w9WgXcQ%'
+GROUP BY 1
+ORDER BY 2 DESC;
+
+/* Analysing three key websites that are posted to hacker news as a source */
+-- Which sites feed hacker news?
+SELECT CASE
+   WHEN url LIKE '%github%' THEN 'GitHub'
+   WHEN url LIKE '%medium%' THEN 'Medium'
+   WHEN url LIKE '%nytimes%' THEN 'New York Times'
+   ELSE 'Other website'
+  END AS 'Source',
+  COUNT(*)
+FROM hacker_news
+GROUP BY 1;
 
