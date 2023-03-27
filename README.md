@@ -1,5 +1,5 @@
 # hacker_news-analysis-2007-to-2017-with-SQL
-Using SQL to analysis the posts and contributors to ycombinator's hacker news from inception in 2007 to 2017
+Using SQL to analysis the posts and contributors to ycombinator's hacker news from inception in 2007 to 2017. This project just works with relational database manipulation, queries and aggregate functions. It does not involve multiple tables.
 
 /* What are the top 10 sotries on Hack News between 2007 and 2017 */
 SELECT title, score
